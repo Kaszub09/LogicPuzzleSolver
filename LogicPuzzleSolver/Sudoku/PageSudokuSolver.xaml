@@ -1,0 +1,29 @@
+﻿<Page x:Class="LogicPuzzleSolver.Sudoku.PageSudokuSolver"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:properties="clr-namespace:LogicPuzzleSolver.Properties"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LogicPuzzleSolver.Sudoku"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageSudokuSolver">
+
+    <Grid>
+        <Viewbox Margin="10,10,360,9.6">
+            <Grid x:Name="gridBoard"  Height="600" Width="600"  />
+        </Viewbox>
+        <Button x:Name="ButtonLoad" Content="Load Sudoku from file" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="200" Click="ButtonLoad_Click"
+                  Height="30"/>
+        <Button x:Name="ButtonSolve" Content="Solve!" HorizontalAlignment="Right" Margin="0,150,10,0" VerticalAlignment="Top" Width="200" Click="ButtonSolve_Click"
+              Height="70"/>
+        <Button x:Name="ButtonClearBoard" Content="Clear the board" HorizontalAlignment="Right" Margin="0,45,10,0" VerticalAlignment="Top" Width="110"
+              Height="25" Click="ButtonClearBoard_Click"/>
+        <Button x:Name="ButtonSolveWithoutGuessing" Content="Solve what possible&#xD;&#xA;without guessing" HorizontalAlignment="Right" Margin="0,100,10,0" VerticalAlignment="Top" Width="140" Click="ButtonSolveWithoutGuessing_Click"
+              Height="45"/>
+        <TextBox x:Name="TextBoxElapsedTime" HorizontalAlignment="Right"   Height="25" Margin="0,225,10,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="ButtonNextSolution"   Content="Next Solution" HorizontalAlignment="Right" Margin="0,255,10,0" VerticalAlignment="Top" Width="200" Height="25" Click="ButtonNextSolution_Click" IsEnabled="False"/>
+        <CheckBox x:Name="CheckBoxAll"   Content="Find all possible solutions" HorizontalAlignment="Right" Margin="0,77,10,0" VerticalAlignment="Top" Width="200"/>
+
+    </Grid>
+</Page>

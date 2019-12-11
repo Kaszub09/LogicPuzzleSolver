@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:properties="clr-namespace:LogicPuzzleSolver.Properties"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogicPuzzleSolver"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="LogicPuzzleSolver.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
+            <Menu DockPanel.Dock="Top"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Grid.IsSharedSizeScope="True">
+                <MenuItem x:Name="MenuSolver" Header="Solver" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"  >
+                    <MenuItem x:Name="MenuSudokuSolver" Header="Sudoku" Click="MenuSudokuSolver_Click" />
+                    <MenuItem x:Name="MenuSkyscraperSolver" Header="Skyscraper" Click="MenuSkyscraperSolver_Click" />
+                    <MenuItem x:Name="MenuNonogramSolver" Header="Nonogram" Click="MenuNonogramSolver_Click" />
+                </MenuItem>
+                <MenuItem x:Name="MenuGenerator" Header="Generator"  >
+                    <MenuItem x:Name="MenuSkyscraperGenerator" Header="Skyscraper" Click="MenuSkyscraperGenerator_Click" />
+                </MenuItem>
+                <MenuItem x:Name="MenuStyle" Header="Style" >
+                    <MenuItem x:Name="MenuStyleBright" Header="Bright" Click="MenuStyle_Click" />
+                    <MenuItem x:Name="MenuStyleDSIII" Header="DSIII" Click="MenuStyleDSIII_Click" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <Button x:Name="ButtonFontSizeMinus"  Content="-" Click="ButtonFontSizeMinus_Click" Margin="5,0,0,34.6" HorizontalAlignment="Left" Width="25" Height="25" VerticalAlignment="Bottom" RenderTransformOrigin="-0.4,0.408" FontSize="18" ToolTip="Change the buttons' font size"/>
+        <Button x:Name="ButtonFontSizePlus"  Content="+" Click="ButtonFontSizePlus_Click" Margin="5,0,0,4.6" HorizontalAlignment="Left" Width="25" Height="25" VerticalAlignment="Bottom" FontSize="18" VerticalContentAlignment="Center" FlowDirection="RightToLeft" ToolTip="Change the buttons' font size"/>
+        <Slider HorizontalAlignment="Left" Margin="5,30,0,64.6" Orientation="Vertical" Width="25" Maximum="60" Minimum="10" SmallChange="2" TickFrequency="10" TickPlacement="TopLeft" Value="{Binding boardFontSize, Source={x:Static properties:Settings.Default}}" ToolTip="Change the board's font size"/>
+        <Frame x:Name="FrameMain"  NavigationUIVisibility="Hidden" Margin="35,30,-0.4,-0.4" Grid.ColumnSpan="2"  />
+    </Grid>
+</Window>
